@@ -1,6 +1,10 @@
-import Testing
+
+import XCTest
 @testable import CurrentVC
 
-@Test func example() async throws {
-    // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+final class CurrentVCTests: XCTestCase {
+    func testExample() throws {
+        // Just checking the library loads
+        XCTAssertNotNil(CurrentVC.self)
+    }
 }

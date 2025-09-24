@@ -1,20 +1,23 @@
-// swift-tools-version: 6.1
-// The swift-tools-version declares the minimum version of Swift required to build this package.
-
 // swift-tools-version: 5.9
+import PackageDescription
+
 let package = Package(
     name: "CurrentVC",
-    platforms: [.iOS(.v13)],
+    // platforms: [
+    //     .iOS(.v13) // UIKit support starts here, you can raise if needed
+    // ],
     products: [
         .library(
             name: "CurrentVC",
-            targets: ["CurrentVC"] // 👈 target name defines the module name
+            targets: ["CurrentVC"]
         ),
     ],
     targets: [
         .target(
-            name: "CurrentVC",
-            path: "Sources"
-        )
+            name: "CurrentVC"),
+        .testTarget(
+            name: "CurrentVCTests",
+            dependencies: ["CurrentVC"]
+        ),
     ]
 )
